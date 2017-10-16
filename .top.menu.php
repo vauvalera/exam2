@@ -2,7 +2,7 @@
 $aMenuLinks = Array(
 	Array(
 		"...", 
-		"", 
+		"/", 
 		Array(), 
 		Array(), 
 		"" 
@@ -11,7 +11,7 @@ $aMenuLinks = Array(
 		"Компания", 
 		"company/", 
 		Array(), 
-		Array(), 
+		Array("TEXT"=>"Этот пункт меню!!111"), 
 		"" 
 	),
 	Array(
@@ -38,6 +38,13 @@ $aMenuLinks = Array(
 	Array(
 		"Партнерам", 
 		"/partneram/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Отзывы", 
+		"/rew/", 
 		Array(), 
 		Array(), 
 		"" 

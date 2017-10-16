@@ -85,6 +85,18 @@ $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH."/js/scripts.js");
             false
         );?>
         <!-- /nav -->
+        <?if($APPLICATION->GetCurPage(false)!=SITE_DIR):?>
+        <?$APPLICATION->IncludeComponent(
+            "bitrix:breadcrumb",
+            "breadcrumb",
+            Array(
+                "COMPONENT_TEMPLATE" => ".default",
+                "START_FROM" => "0",
+                "PATH" => "",
+                "SITE_ID" => "s1"
+            )
+        );?>
+         <?endif;?>
         <!-- page -->
         <div class="page">
             <!-- content box -->
@@ -92,9 +104,9 @@ $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH."/js/scripts.js");
                 <!-- content -->
                 <div class="content">
                     <div class="cnt">
-                        <?if($APPLICATION->GetCurPage()==false):?>
+                        <?if($APPLICATION->GetCurPage(false)==SITE_DIR):?>
                         <?$APPLICATION->IncludeFile("main-header.php");?>
                         <?else:?>
-                        <?$APPLICATION->ShowTitle(false)?>
+                        <h1><?$APPLICATION->ShowTitle(false)?></h1>
                         <?endif;?>
     
