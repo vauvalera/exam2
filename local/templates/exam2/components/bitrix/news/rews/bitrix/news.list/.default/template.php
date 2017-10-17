@@ -58,7 +58,13 @@ $this->setFrameMode(true);
 					title="<?=$arItem["PREVIEW_PICTURE"]["TITLE"]?>"
 					style="float:left"
 					/>
-			<?endif;?>
+			<?endif?>
+			<?else:?>
+							<img
+							border="0"
+							src="<?=SITE_TEMPLATE_PATH?>/img/rew/no_photo.jpg"
+							/>
+			
 		
 		<?endif?>
 		</div>

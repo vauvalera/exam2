@@ -5,6 +5,7 @@ $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH."/css/owl.carousel.css");
 $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH."/js/jquery.min.js");
 $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH."/js/owl.carousel.min.js");
 $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH."/js/scripts.js");
+global $USER;
 ?>
 
 <!DOCTYPE html>
@@ -24,7 +25,9 @@ $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH."/js/scripts.js");
 </head>
 
 <body>
+    <?if ($USER->IsAdmin()):?>
     <?$APPLICATION->ShowPanel()?>
+    <?endif;?>
     <!-- wrap -->
     <div class="wrap">
         <!-- header -->

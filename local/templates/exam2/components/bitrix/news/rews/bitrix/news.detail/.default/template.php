@@ -36,15 +36,21 @@ $this->setFrameMode(true);
 							alt="<?=$arResult["DETAIL_PICTURE"]["ALT"]?>"
 							title="<?=$arResult["DETAIL_PICTURE"]["TITLE"]?>"
 							/>
+					<?else:?>
+							<img
+							border="0"
+							src="<?=SITE_TEMPLATE_PATH?>/img/rew/no_photo.jpg"
+							/>
 					<?endif?>
 				</div>
 		<?if(!empty($arResult["PROPERTIES"]["DOCS"]["VALUE"])):?>
 		<div class="exam-review-doc">
 				<p>Документы:</p>
-		<?foreach($arResult["PROPERTIES"]["DOCS"]["VALUE"] as $File):?>
+		<?foreach($arResult["PROPERTIES"]["DOCS"]["VALUE"] as $arElem):?>
+		<?$arFile = CFile::GetFileArray($arElem);?>
 		<div class="exam-review-item-doc">
 		<img class="rew-doc-ico" src="<?=SITE_TEMPLATE_PATH?>/img/icons/pdf_ico_40.png">
-		<a href="">Файл 1</a></div>
+		<a href="<?=$arFile["SRC"]?>"><?=$arFile["ORIGINAL_NAME"]?></a></div>
 		<?endforeach;?>
 		<?endif;?>
 	</div>

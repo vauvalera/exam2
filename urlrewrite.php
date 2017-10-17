@@ -19,12 +19,6 @@ $arUrlRewrite = array(
 		"PATH" => "/news/index.php",
 	),
 	array(
-		"CONDITION" => "#^/rews/#",
-		"RULE" => "",
-		"ID" => "bitrix:news",
-		"PATH" => "/test.php",
-	),
-	array(
 		"CONDITION" => "#^/rew/#",
 		"RULE" => "",
 		"ID" => "bitrix:news",
